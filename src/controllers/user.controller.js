@@ -7,11 +7,12 @@ const getAll = catchError(async(req, res) => {
 });
 
 const create = catchError(async(req, res) => {
-    const { name, email, phone, birthday } = req.body;
+    const { first_name, last_name, email, password, birthday } = req.body;
     const user = await User.create({
-        name: name,
+        first_name: first_name,
+        last_name: last_name,
         email: email,
-        phone: phone,
+        password: password,
         birthday: birthday,
     });
     return res.status(201).json(user);
