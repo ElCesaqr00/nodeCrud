@@ -36,7 +36,7 @@ const remove = catchError(async(req, res) => {
 // /users/1
 const update = catchError(async(req, res) => {
     const { id } = req.params;
-    const { name, email, phone, birthday } = req.body;
+    const { first_name, last_name, email, password, birthday} = req.body;
     const user = await User.update({
         first_name: first_name,
         last_name: last_name,
