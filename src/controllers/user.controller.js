@@ -38,9 +38,10 @@ const update = catchError(async(req, res) => {
     const { id } = req.params;
     const { name, email, phone, birthday } = req.body;
     const user = await User.update({
-        name: name,
+        first_name: first_name,
+        last_name: last_name,
         email: email,
-        phone: phone,
+        password: password,
         birthday: birthday,
     }, { where: { id: id }, returning: true });
     return res.json(user);
