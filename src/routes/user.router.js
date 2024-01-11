@@ -10,6 +10,6 @@ userRouter.route("/users")
 userRouter.route("/users/:id")
 	.get(getOne)
 	.delete(remove)
-	.path(update);
+	.patch(update);
 
 module.exports = userRouter;
